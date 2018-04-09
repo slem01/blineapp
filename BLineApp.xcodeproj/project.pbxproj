@@ -13,6 +13,9 @@
 		D5520F35207B1AB3002A4D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5520F34207B1AB3002A4D3D /* Assets.xcassets */; };
 		D5520F38207B1AB3002A4D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5520F36207B1AB3002A4D3D /* LaunchScreen.storyboard */; };
 		D5520F43207B1AB3002A4D3D /* BLineAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5520F42207B1AB3002A4D3D /* BLineAppTests.swift */; };
+		D5520F50207B2648002A4D3D /* blinebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D5520F4F207B2648002A4D3D /* blinebackground.png */; };
+		D5520F52207B2BCA002A4D3D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D5520F51207B2BCA002A4D3D /* back.png */; };
+		D5E41369207B365A00CF551D /* MySettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E41368207B365A00CF551D /* MySettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		D5520F3E207B1AB3002A4D3D /* BLineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5520F42207B1AB3002A4D3D /* BLineAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLineAppTests.swift; sourceTree = "<group>"; };
 		D5520F44207B1AB3002A4D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5520F4F207B2648002A4D3D /* blinebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blinebackground.png; sourceTree = "<group>"; };
+		D5520F51207B2BCA002A4D3D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		D5E41368207B365A00CF551D /* MySettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +83,12 @@
 		D5520F2C207B1AB3002A4D3D /* BLineApp */ = {
 			isa = PBXGroup;
 			children = (
+				D5520F4F207B2648002A4D3D /* blinebackground.png */,
+				D5520F51207B2BCA002A4D3D /* back.png */,
 				D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */,
 				D5520F2F207B1AB3002A4D3D /* ViewController.swift */,
 				D5520F31207B1AB3002A4D3D /* Main.storyboard */,
+				D5E41368207B365A00CF551D /* MySettingsController.swift */,
 				D5520F34207B1AB3002A4D3D /* Assets.xcassets */,
 				D5520F36207B1AB3002A4D3D /* LaunchScreen.storyboard */,
 				D5520F39207B1AB3002A4D3D /* Info.plist */,
@@ -179,6 +188,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5520F50207B2648002A4D3D /* blinebackground.png in Resources */,
+				D5520F52207B2BCA002A4D3D /* back.png in Resources */,
 				D5520F38207B1AB3002A4D3D /* LaunchScreen.storyboard in Resources */,
 				D5520F35207B1AB3002A4D3D /* Assets.xcassets in Resources */,
 				D5520F33207B1AB3002A4D3D /* Main.storyboard in Resources */,
@@ -199,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E41369207B365A00CF551D /* MySettingsController.swift in Sources */,
 				D5520F30207B1AB3002A4D3D /* ViewController.swift in Sources */,
 				D5520F2E207B1AB3002A4D3D /* AppDelegate.swift in Sources */,
 			);
@@ -406,6 +418,7 @@
 				D5520F49207B1AB3002A4D3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5520F4A207B1AB3002A4D3D /* Build configuration list for PBXNativeTarget "BLineAppTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +427,7 @@
 				D5520F4C207B1AB3002A4D3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
