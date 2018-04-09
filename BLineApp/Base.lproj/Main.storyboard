@@ -98,6 +98,9 @@
                                 <state key="normal" title="Add Action">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="V1e-2P-lvi" kind="show" id="kCA-jw-Brf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-bg-vkw">
                                 <rect key="frame" x="0.0" y="365" width="375" height="302"/>
@@ -109,6 +112,9 @@
                                 <state key="normal" title="Add Response">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mP5-DK-5aU" kind="show" id="rVu-wd-Qc5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,6 +136,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmU-uK-x2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4132" y="-401.64917541229386"/>
+        </scene>
+        <!--Add Action-->
+        <scene sceneID="WhB-hO-SJl">
+            <objects>
+                <viewController id="V1e-2P-lvi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b1B-dx-PiK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hVQ-lp-L3K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9DH-aG-7lM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Action" id="oy3-zQ-Dr9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWj-eL-oiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5334" y="-709"/>
+        </scene>
+        <!--Add Response-->
+        <scene sceneID="sdQ-LU-m90">
+            <objects>
+                <viewController id="mP5-DK-5aU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MU5-9I-o8R"/>
+                        <viewControllerLayoutGuide type="bottom" id="edL-3u-nUJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gMQ-Hf-cTo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Response" id="2sQ-W7-Mnu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSR-KL-zUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5334" y="-34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eg8-Y3-E9F">
