@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--My Settings-->
         <scene sceneID="nJD-sy-ShH">
             <objects>
                 <viewController id="115-Zl-yMZ" sceneMemberID="viewController">
@@ -64,10 +64,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="My Settings" id="O00-Dj-QuT">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="51e-I4-TRS">
+                            <connections>
+                                <segue destination="teE-Yo-5T9" kind="show" id="hms-v8-AZH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnm-5S-Wcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2118" y="-65"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="lh7-1B-62m">
+            <objects>
+                <viewController id="7bd-oB-l6i" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U3b-5l-bth"/>
+                        <viewControllerLayoutGuide type="bottom" id="gPU-pn-YnM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fde-14-Rll">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0P-pn-1C8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="301"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="301" id="zge-wC-Da8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Add Action">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-bg-vkw">
+                                <rect key="frame" x="0.0" y="365" width="375" height="302"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="302" id="anh-jy-9jW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Add Response">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iIV-bg-vkw" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="Jz4-bn-3Y4"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="top" secondItem="U3b-5l-bth" secondAttribute="bottom" id="Qh8-pv-Ci2"/>
+                            <constraint firstItem="gPU-pn-YnM" firstAttribute="top" secondItem="iIV-bg-vkw" secondAttribute="bottom" id="STA-ox-AGk"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="leading" secondItem="iIV-bg-vkw" secondAttribute="leading" id="ayW-Ij-EkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="e8s-lZ-5Wh"/>
+                            <constraint firstItem="iIV-bg-vkw" firstAttribute="top" secondItem="i0P-pn-1C8" secondAttribute="bottom" id="uX2-Zp-xKV"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="xAj-ak-isl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add" id="b16-HB-HIs">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3Gb-MV-MJl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UL2-5Y-v3i"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmU-uK-x2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4132" y="-401.64917541229386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eg8-Y3-E9F">
@@ -86,6 +148,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDf-zV-16d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qri-gt-3Le">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="teE-Yo-5T9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="513-LB-fCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7bd-oB-l6i" kind="relationship" relationship="rootViewController" id="89W-CF-Gsb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="go7-Os-fyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3192.8000000000002" y="-401.64917541229386"/>
         </scene>
     </scenes>
     <resources>
