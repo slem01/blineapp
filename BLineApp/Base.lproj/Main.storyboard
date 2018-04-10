@@ -59,10 +59,44 @@
                         <viewControllerLayoutGuide type="top" id="iNV-eY-Ch6"/>
                         <viewControllerLayoutGuide type="bottom" id="Hrx-5U-q2r"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nRu-49-mHy">
+                    <view key="view" contentMode="scaleToFill" id="nRu-49-mHy" customClass="SettingTableViewCell" customModule="BLineApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pBX-Bb-Ti7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" rowHeight="90" id="Km9-YE-6bc" customClass="SettingTableViewCell" customModule="BLineApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Km9-YE-6bc" id="AGS-0u-FAh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHy-8J-JdX">
+                                                    <rect key="frame" x="8" y="22" width="367" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingLabel" destination="ZHy-8J-JdX" id="Ibb-dr-uB3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pBX-Bb-Ti7" firstAttribute="leading" secondItem="nRu-49-mHy" secondAttribute="leading" id="73u-7I-Cbt"/>
+                            <constraint firstItem="pBX-Bb-Ti7" firstAttribute="top" secondItem="iNV-eY-Ch6" secondAttribute="bottom" id="Uo1-wt-TwK"/>
+                            <constraint firstAttribute="trailing" secondItem="pBX-Bb-Ti7" secondAttribute="trailing" id="d60-Wp-gzd"/>
+                            <constraint firstItem="Hrx-5U-q2r" firstAttribute="top" secondItem="pBX-Bb-Ti7" secondAttribute="bottom" id="sAD-3b-yz6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Settings" id="O00-Dj-QuT">
                         <barButtonItem key="rightBarButtonItem" title="+" id="51e-I4-TRS">
@@ -74,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnm-5S-Wcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2118" y="-65"/>
+            <point key="canvasLocation" x="2117.5999999999999" y="-65.217391304347828"/>
         </scene>
         <!--Add-->
         <scene sceneID="lh7-1B-62m">
