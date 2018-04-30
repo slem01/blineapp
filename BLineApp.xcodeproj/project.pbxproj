@@ -20,6 +20,8 @@
 		D5520F50207B2648002A4D3D /* blinebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D5520F4F207B2648002A4D3D /* blinebackground.png */; };
 		D5520F52207B2BCA002A4D3D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D5520F51207B2BCA002A4D3D /* back.png */; };
 		D5E41369207B365A00CF551D /* MySettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E41368207B365A00CF551D /* MySettingsController.swift */; };
+		D5EE259220927D3B00EFE55A /* AddActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE259120927D3B00EFE55A /* AddActionController.swift */; };
+		D5EE25942093ADEC00EFE55A /* AddResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE25932093ADEC00EFE55A /* AddResponseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		D5520F4F207B2648002A4D3D /* blinebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blinebackground.png; sourceTree = "<group>"; };
 		D5520F51207B2BCA002A4D3D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		D5E41368207B365A00CF551D /* MySettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySettingsController.swift; sourceTree = "<group>"; };
+		D5EE259120927D3B00EFE55A /* AddActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActionController.swift; sourceTree = "<group>"; };
+		D5EE25932093ADEC00EFE55A /* AddResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddResponseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +99,14 @@
 				D5520F51207B2BCA002A4D3D /* back.png */,
 				D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */,
 				D5520F2F207B1AB3002A4D3D /* ViewController.swift */,
+				D5E41368207B365A00CF551D /* MySettingsController.swift */,
+				D5EE259120927D3B00EFE55A /* AddActionController.swift */,
+				D5EE25932093ADEC00EFE55A /* AddResponseController.swift */,
 				D5520F31207B1AB3002A4D3D /* Main.storyboard */,
 				811013AE207C3A960056F108 /* SettingTableViewController.swift */,
 				811013AC207C325D0056F108 /* SettingTableViewCell.swift */,
 				811013A8207C23660056F108 /* Setting.swift */,
 				811013AA207C28250056F108 /* settingConstants.swift */,
-				D5E41368207B365A00CF551D /* MySettingsController.swift */,
 				D5520F34207B1AB3002A4D3D /* Assets.xcassets */,
 				D5520F36207B1AB3002A4D3D /* LaunchScreen.storyboard */,
 				D5520F39207B1AB3002A4D3D /* Info.plist */,
@@ -228,7 +234,9 @@
 				D5520F30207B1AB3002A4D3D /* ViewController.swift in Sources */,
 				811013AB207C28250056F108 /* settingConstants.swift in Sources */,
 				811013A9207C23660056F108 /* Setting.swift in Sources */,
+				D5EE25942093ADEC00EFE55A /* AddResponseController.swift in Sources */,
 				D5520F2E207B1AB3002A4D3D /* AppDelegate.swift in Sources */,
+				D5EE259220927D3B00EFE55A /* AddActionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

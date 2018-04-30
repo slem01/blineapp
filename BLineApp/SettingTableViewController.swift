@@ -43,7 +43,7 @@ class SettingTableViewController: UITableViewController {
 
         // Configure the cell...
         let setting = settings[indexPath.row]
-        cell?.settingLabel = setting.title
+        cell?.settingLabel.text = setting.title
 
         return cell!
     }
@@ -99,7 +99,11 @@ class SettingTableViewController: UITableViewController {
         var setting3 = Setting(myAction: "oneTap", myResponse: "callHome", title: "Call Home")
         var setting4 = Setting(myAction: "twoTaps", myResponse: "textMom", title: "Text Mom \"Made it safe\"")
         var setting5 = Setting(myAction: "drawS", myResponse: "openSnap", title: "Open Snapchat")
-        self.settings += [setting1, setting2, setting3, setting4, setting5]
+        self.settings.append(setting1!)
+        self.settings.append(setting2!)
+        self.settings.append(setting3!)
+        self.settings.append(setting4!)
+        self.settings.append(setting5!)
     }
 
 }

@@ -1,18 +1,15 @@
 //
-//  MySettingsController.swift
+//  AddResponseController.swift
 //  BLineApp
 //
-//  Created by sally everlove on 4/9/18.
+//  Created by sally everlove on 4/27/18.
 //  Copyright © 2018 Shelby Lem. All rights reserved.
 //
 
 import UIKit
 
-class MySettingsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    //@IBOutlet weak var BackButton: UIBarButtonItem!
-    //BackButton = self.navigationItem.backBarButtonItem;
-    //@IBOutlet weak var MySettingsNavigationBar: UINavigationItem!
-  
+class AddResponseController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     let sections = ["Fruit", "Vegetables"]
     let fruit = ["Apple", "Orange", "Mango"]
     let vegetables = ["Carrot", "Broccoli", "Cucumber"]
@@ -64,5 +61,4 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
         }
         return cell
     }
-    
 }
