@@ -8,16 +8,18 @@
 
 import UIKit
 
+protocol DataEnteredDelegate: class {
+    func userDidEnterInformation(info: String)
+    func userDidEnterResponse(info: String)
+}
+
 class AddActionController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    //@IBOutlet weak var BackButton: UIBarButtonItem!
-    //BackButton = self.navigationItem.backBarButtonItem;
-    //@IBOutlet weak var MySettingsNavigationBar: UINavigationItem!
-    
-    let sections = ["Tap", "Swipe"]//, "Fruit", "Vegetables"]
+        
+    let sections = ["Tap", "Swipe"]
     let tap = ["Single Tap", "Double Tap"]
     let swipe = ["Swipe Left", "Swipe Up", "Swipe Right", "Swipe Down"]
-    let fruit = ["Apple", "Orange", "Mango"]
-    let vegetables = ["Carrot", "Broccoli", "Cucumber"]
+    
+    weak var delegate: DataEnteredDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,28 @@ class AddActionController: UIViewController, UITableViewDataSource, UITableViewD
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        var action = ""
+
+        switch section {
+        case 0:
+            action = tap[row]
+        case 1:
+            action = swipe[row]
+        default:
+            action = ""
+        }
+        
+        delegate?.userDidEnterInformation(info: action)
+        _ = self.navigationController?.popViewController(animated: true)
+        //self.myAdd?.onUserAction(data: action)
+        
+        //print(indexPath.section)
+    }
+    
     
 }
 

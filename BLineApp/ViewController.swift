@@ -23,15 +23,30 @@ class ViewController: UIViewController {
         doubleTapRecognizer.numberOfTouchesRequired = 1
         singleTapRecognizer.require(toFail: doubleTapRecognizer)
         
-        /*let twoTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.twoTapped(_:)))
+        let twoTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.twoTapped(_:)))
         twoTapRecognizer.numberOfTapsRequired = 1
-        twoTapRecognizer.numberOfTouchesRequired = 2*/
+        twoTapRecognizer.numberOfTouchesRequired = 2
         
-        /*let swipeLeftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
-        swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirection.left*/
+        let swipeLeftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
+        swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirection.left
         
+        let swipeUpRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeUp(_:)))
+        swipeUpRecognizer.direction = UISwipeGestureRecognizerDirection.up
+        
+        let swipeRightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeRight(_:)))
+        swipeRightRecognizer.direction = UISwipeGestureRecognizerDirection.right
+        
+        let swipeDownRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeDown(_:)))
+        swipeDownRecognizer.direction = UISwipeGestureRecognizerDirection.down
+        
+        //Add gestures to page
         self.view.addGestureRecognizer(singleTapRecognizer)
         self.view.addGestureRecognizer(doubleTapRecognizer)
+        self.view.addGestureRecognizer(twoTapRecognizer)
+        self.view.addGestureRecognizer(swipeLeftRecognizer)
+        self.view.addGestureRecognizer(swipeUpRecognizer)
+        self.view.addGestureRecognizer(swipeRightRecognizer)
+        self.view.addGestureRecognizer(swipeDownRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +54,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //gesture functions
     func singleTapped(_ sender: UITapGestureRecognizer) {
-        
         print("single tap")
     }
     
@@ -48,13 +63,24 @@ class ViewController: UIViewController {
         print("double tap")
     }
     
-    /*func twoTapped(_ sender: UITapGestureRecognizer) {
+    func twoTapped(_ sender: UITapGestureRecognizer) {
         print("two tap")
-    }*/
+    }
     
-    /*func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+    func swipeLeft(_ sender: UISwipeGestureRecognizer) {
         print("swipe left")
-    }*/
+    }
 
+    func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        print("swipe up")
+    }
+    
+    func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        print("swipe right")
+    }
+    
+    func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        print("swipe down")
+    }
 }
 

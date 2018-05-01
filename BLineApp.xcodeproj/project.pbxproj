@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		811013A9207C23660056F108 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811013A8207C23660056F108 /* Setting.swift */; };
 		811013AB207C28250056F108 /* settingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811013AA207C28250056F108 /* settingConstants.swift */; };
-		811013AD207C325D0056F108 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811013AC207C325D0056F108 /* SettingTableViewCell.swift */; };
-		811013AF207C3A960056F108 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811013AE207C3A960056F108 /* SettingTableViewController.swift */; };
 		D5520F2E207B1AB3002A4D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */; };
 		D5520F30207B1AB3002A4D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5520F2F207B1AB3002A4D3D /* ViewController.swift */; };
 		D5520F33207B1AB3002A4D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5520F31207B1AB3002A4D3D /* Main.storyboard */; };
@@ -22,6 +20,7 @@
 		D5E41369207B365A00CF551D /* MySettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E41368207B365A00CF551D /* MySettingsController.swift */; };
 		D5EE259220927D3B00EFE55A /* AddActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE259120927D3B00EFE55A /* AddActionController.swift */; };
 		D5EE25942093ADEC00EFE55A /* AddResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE25932093ADEC00EFE55A /* AddResponseController.swift */; };
+		D5EE25962097B0D600EFE55A /* AddSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE25952097B0D600EFE55A /* AddSettingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +36,6 @@
 /* Begin PBXFileReference section */
 		811013A8207C23660056F108 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		811013AA207C28250056F108 /* settingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingConstants.swift; sourceTree = "<group>"; };
-		811013AC207C325D0056F108 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		811013AE207C3A960056F108 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D5520F2A207B1AB3002A4D3D /* BLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5520F2F207B1AB3002A4D3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +51,8 @@
 		D5E41368207B365A00CF551D /* MySettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySettingsController.swift; sourceTree = "<group>"; };
 		D5EE259120927D3B00EFE55A /* AddActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActionController.swift; sourceTree = "<group>"; };
 		D5EE25932093ADEC00EFE55A /* AddResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddResponseController.swift; sourceTree = "<group>"; };
+		D5EE25952097B0D600EFE55A /* AddSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSettingController.swift; sourceTree = "<group>"; };
+		D5EE259720983E0500EFE55A /* BLineApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLineApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +79,7 @@
 				D5520F2C207B1AB3002A4D3D /* BLineApp */,
 				D5520F41207B1AB3002A4D3D /* BLineAppTests */,
 				D5520F2B207B1AB3002A4D3D /* Products */,
+				D5EE259820983E0500EFE55A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,17 +95,17 @@
 		D5520F2C207B1AB3002A4D3D /* BLineApp */ = {
 			isa = PBXGroup;
 			children = (
+				D5EE259720983E0500EFE55A /* BLineApp.entitlements */,
 				D5520F4F207B2648002A4D3D /* blinebackground.png */,
 				D5520F51207B2BCA002A4D3D /* back.png */,
 				D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */,
+				D5520F31207B1AB3002A4D3D /* Main.storyboard */,
 				D5520F2F207B1AB3002A4D3D /* ViewController.swift */,
 				D5E41368207B365A00CF551D /* MySettingsController.swift */,
+				811013A8207C23660056F108 /* Setting.swift */,
+				D5EE25952097B0D600EFE55A /* AddSettingController.swift */,
 				D5EE259120927D3B00EFE55A /* AddActionController.swift */,
 				D5EE25932093ADEC00EFE55A /* AddResponseController.swift */,
-				D5520F31207B1AB3002A4D3D /* Main.storyboard */,
-				811013AE207C3A960056F108 /* SettingTableViewController.swift */,
-				811013AC207C325D0056F108 /* SettingTableViewCell.swift */,
-				811013A8207C23660056F108 /* Setting.swift */,
 				811013AA207C28250056F108 /* settingConstants.swift */,
 				D5520F34207B1AB3002A4D3D /* Assets.xcassets */,
 				D5520F36207B1AB3002A4D3D /* LaunchScreen.storyboard */,
@@ -121,6 +121,13 @@
 				D5520F44207B1AB3002A4D3D /* Info.plist */,
 			);
 			path = BLineAppTests;
+			sourceTree = "<group>";
+		};
+		D5EE259820983E0500EFE55A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +181,11 @@
 					D5520F29207B1AB3002A4D3D = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					D5520F3D207B1AB3002A4D3D = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -228,8 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				811013AF207C3A960056F108 /* SettingTableViewController.swift in Sources */,
-				811013AD207C325D0056F108 /* SettingTableViewCell.swift in Sources */,
+				D5EE25962097B0D600EFE55A /* AddSettingController.swift in Sources */,
 				D5E41369207B365A00CF551D /* MySettingsController.swift in Sources */,
 				D5520F30207B1AB3002A4D3D /* ViewController.swift in Sources */,
 				811013AB207C28250056F108 /* settingConstants.swift in Sources */,
@@ -375,6 +386,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLineApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.BLineApp;
@@ -387,6 +400,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLineApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.BLineApp;

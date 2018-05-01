@@ -16,6 +16,7 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
     let sections = ["Fruit", "Vegetables"]
     let fruit = ["Apple", "Orange", "Mango"]
     let vegetables = ["Carrot", "Broccoli", "Cucumber"]
+    //let mySettings = [Setting]
     
     override func viewDidLoad() {
         super.viewDidLoad()

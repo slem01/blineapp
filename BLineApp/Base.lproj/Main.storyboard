@@ -60,7 +60,7 @@
                         <viewControllerLayoutGuide type="top" id="iNV-eY-Ch6"/>
                         <viewControllerLayoutGuide type="bottom" id="Hrx-5U-q2r"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nRu-49-mHy" customClass="SettingTableViewCell" customModule="BLineApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="nRu-49-mHy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" rowHeight="90" id="Km9-YE-6bc" customClass="SettingTableViewCell" customModule="BLineApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" rowHeight="90" id="Km9-YE-6bc">
                                         <rect key="frame" x="0.0" y="56" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Km9-YE-6bc" id="AGS-0u-FAh">
@@ -106,7 +106,7 @@
         <!--Add-->
         <scene sceneID="lh7-1B-62m">
             <objects>
-                <viewController id="7bd-oB-l6i" sceneMemberID="viewController">
+                <viewController id="7bd-oB-l6i" customClass="AddSettingController" customModule="BLineApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U3b-5l-bth"/>
                         <viewControllerLayoutGuide type="bottom" id="gPU-pn-YnM"/>
@@ -126,7 +126,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ACh-fY-QGv" kind="show" id="q0J-gG-EL4"/>
+                                    <segue destination="ACh-fY-QGv" kind="show" identifier="addActionSegue" id="q0J-gG-EL4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-bg-vkw">
@@ -140,25 +140,31 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kgV-JT-nfW" kind="show" id="eTD-C8-O4u"/>
+                                    <segue destination="kgV-JT-nfW" kind="show" identifier="addResponseSegue" id="eTD-C8-O4u"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iIV-bg-vkw" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="Jz4-bn-3Y4"/>
-                            <constraint firstItem="i0P-pn-1C8" firstAttribute="top" secondItem="U3b-5l-bth" secondAttribute="bottom" id="Qh8-pv-Ci2"/>
-                            <constraint firstItem="gPU-pn-YnM" firstAttribute="top" secondItem="iIV-bg-vkw" secondAttribute="bottom" id="STA-ox-AGk"/>
-                            <constraint firstItem="i0P-pn-1C8" firstAttribute="leading" secondItem="iIV-bg-vkw" secondAttribute="leading" id="ayW-Ij-EkJ"/>
-                            <constraint firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="e8s-lZ-5Wh"/>
-                            <constraint firstItem="iIV-bg-vkw" firstAttribute="top" secondItem="i0P-pn-1C8" secondAttribute="bottom" id="uX2-Zp-xKV"/>
-                            <constraint firstItem="i0P-pn-1C8" firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="xAj-ak-isl"/>
+                            <constraint firstAttribute="trailing" secondItem="i0P-pn-1C8" secondAttribute="trailing" id="NXQ-oK-BOA"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="top" secondItem="Fde-14-Rll" secondAttribute="top" constant="64" id="P0r-Qi-jge"/>
+                            <constraint firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="Tzc-Kg-swF"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="ZcX-Ad-O5c"/>
+                            <constraint firstItem="iIV-bg-vkw" firstAttribute="top" secondItem="Fde-14-Rll" secondAttribute="top" constant="365" id="aUS-8c-OLq"/>
+                            <constraint firstItem="iIV-bg-vkw" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="bTo-Vg-ia3"/>
+                            <constraint firstAttribute="bottom" secondItem="i0P-pn-1C8" secondAttribute="bottom" constant="302" id="eTC-dk-iNB"/>
+                            <constraint firstAttribute="bottom" secondItem="iIV-bg-vkw" secondAttribute="bottom" id="iQN-lZ-UWY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="b16-HB-HIs">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="3Gb-MV-MJl"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="UL2-5Y-v3i"/>
                     </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
+                    <connections>
+                        <outlet property="addActionButton" destination="i0P-pn-1C8" id="9Th-cJ-wzS"/>
+                        <outlet property="addResponseButton" destination="iIV-bg-vkw" id="pcM-HE-SDj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmU-uK-x2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

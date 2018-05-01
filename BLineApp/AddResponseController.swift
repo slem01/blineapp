@@ -8,11 +8,14 @@
 
 import UIKit
 
+
 class AddResponseController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let sections = ["Fruit", "Vegetables"]
     let fruit = ["Apple", "Orange", "Mango"]
     let vegetables = ["Carrot", "Broccoli", "Cucumber"]
+    
+    weak var delegate: DataEnteredDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,4 +64,26 @@ class AddResponseController: UIViewController, UITableViewDataSource, UITableVie
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        var action = ""
+        
+        switch section {
+        case 0:
+            action = fruit[row]
+        case 1:
+            action = vegetables[row]
+        default:
+            action = ""
+        }
+        
+        delegate?.userDidEnterResponse(info: action)
+        //_ = self.navigationController?.popViewController(animated: true)
+        //self.myAdd?.onUserAction(data: action)
+        
+        //print(indexPath.section)
+    }
+    
 }
