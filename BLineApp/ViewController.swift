@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,9 @@ class ViewController: UIViewController {
     
     //gesture functions
     func singleTapped(_ sender: UITapGestureRecognizer) {
+        sendSMSText(phoneNumber: "8885555512")
         print("single tap")
+        
     }
     
     func doubleTapped(_ sender: UITapGestureRecognizer) {
@@ -81,6 +84,26 @@ class ViewController: UIViewController {
     
     func swipeDown(_ sender: UISwipeGestureRecognizer) {
         print("swipe down")
+    }
+    
+    func sendSMSText(phoneNumber: String) {
+        print("in sendSMSText")
+        if (MFMessageComposeViewController.canSendText()) {
+            print("in if")
+            let controller = MFMessageComposeViewController()
+            controller.body = "test"
+            controller.recipients = [phoneNumber]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
 }
 

@@ -11,9 +11,8 @@ import UIKit
 
 class AddResponseController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let sections = ["Fruit", "Vegetables"]
-    let fruit = ["Apple", "Orange", "Mango"]
-    let vegetables = ["Carrot", "Broccoli", "Cucumber"]
+    let sections = ["Apps"]
+    let apps = ["Maps", "Health", "Contacts"]
     
     weak var delegate: DataEnteredDelegate? = nil
     
@@ -38,11 +37,8 @@ class AddResponseController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            //Fruit Section
-            return fruit.count
-        case 1:
-            //Vegetable Section
-            return vegetables.count
+            //apps Section
+            return apps.count
         default:
             return 0
         }
@@ -52,36 +48,29 @@ class AddResponseController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         switch indexPath.section {
         case 0:
-            //Fruit Section
-            cell.textLabel?.text = fruit[indexPath.row]
-            break
-        case 1:
-            //Vegetable Section
-            cell.textLabel?.text = vegetables[indexPath.row]
+            cell.textLabel?.text = apps[indexPath.row]
             break
         default:
             break
         }
+        //cell.textLabel?.text = apps[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
         let row = indexPath.row
-        var action = ""
+        var response = ""
         
         switch section {
         case 0:
-            action = fruit[row]
-        case 1:
-            action = vegetables[row]
+            response = apps[row]
         default:
-            action = ""
+            response = ""
         }
         
-        delegate?.userDidEnterResponse(info: action)
-        //_ = self.navigationController?.popViewController(animated: true)
-        //self.myAdd?.onUserAction(data: action)
+        delegate?.userDidEnterResponse(info: response)
+        _ = self.navigationController?.popViewController(animated: true)
         
         //print(indexPath.section)
     }
