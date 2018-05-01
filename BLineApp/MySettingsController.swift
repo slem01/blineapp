@@ -9,18 +9,21 @@
 import UIKit
 
 class MySettingsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    //@IBOutlet weak var BackButton: UIBarButtonItem!
-    //BackButton = self.navigationItem.backBarButtonItem;
-    //@IBOutlet weak var MySettingsNavigationBar: UINavigationItem!
-  
-    let sections = ["Fruit", "Vegetables"]
-    let fruit = ["Apple", "Orange", "Mango"]
-    let vegetables = ["Carrot", "Broccoli", "Cucumber"]
-    //let mySettings = [Setting]
+    
+    var settings = [Setting]()
+    
+    private func loadSampleSettings() {
+        let setting1 = Setting(myAction: "Single Tap", myResponse: "Send Text", title: "Text Shelby")
+
+        let setting2 = Setting(myAction: "Double Tap", myResponse: "Flash Light", title: "Turn On Flash Light")
+        
+        self.settings += [setting1, setting2]
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadSampleSettings()
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,42 +31,23 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            //Fruit Section
-            return fruit.count
-        case 1:
-            //Vegetable Section
-            return vegetables.count
-        default:
-            return 0
-        }
+        return settings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
-        switch indexPath.section {
-        case 0:
-            //Fruit Section
-            cell.textLabel?.text = fruit[indexPath.row]
-            break
-        case 1:
-            //Vegetable Section
-            cell.textLabel?.text = vegetables[indexPath.row]
-            break
-        default:
-            break
-        }
+        cell.textLabel?.text = settings[indexPath.row].title
         return cell
     }
+    
+    /*private func saveSettings() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(settings, toFile: Setting.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Settings successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save settings...", log: OSLog.default, type: .error)
+        }
+    }*/
     
 }
