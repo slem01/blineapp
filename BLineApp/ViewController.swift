@@ -8,8 +8,9 @@
 
 import UIKit
 import MessageUI
+import AVFoundation
 
-class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     //gesture functions
     func singleTapped(_ sender: UITapGestureRecognizer) {
-        sendSMSText(phoneNumber: "8885555512")
+        //sendSMSText(phoneNumber: "7347783566")
+        //toggleFlashlight()
+        //let application:UIApplication = UIApplication.sharedApplication()
+        //UIApplication.shared.openURL(NSURL(string: "telprompt://7347783566")! as URL)
+        //openMyURL(myURL: "http://www.google.com")
+        //openMyURL(myURL: "telprompt://7347783566")
+        //openMyURL(myURL: "instagram://")
+
         print("single tap")
         
     }
@@ -87,11 +95,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     }
     
     func sendSMSText(phoneNumber: String) {
-        print("in sendSMSText")
         if (MFMessageComposeViewController.canSendText()) {
-            print("in if")
             let controller = MFMessageComposeViewController()
-            controller.body = "test"
+            controller.body = "I sent this from our app :)"
             controller.recipients = [phoneNumber]
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)
@@ -101,6 +107,39 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    func toggleFlashlight() {
+        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
+            do {
+                if device.torchMode == AVCaptureTorchMode.on{
+                    try device.lockForConfiguration()
+                    device.torchMode = .off
+                    device.unlockForConfiguration()
+                } else {
+                    try device.lockForConfiguration()
+                    device.torchMode = .on
+                    device.unlockForConfiguration()
+                }
+            }
+            catch {
+                print("Error")
+            }
+        }
+    }
+    
+    func openMyURL(myURL: String) {
+        guard let url = URL(string: myURL) else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+
+    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
