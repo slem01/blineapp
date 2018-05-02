@@ -8,8 +8,10 @@
 
 import UIKit
 
+
 class MySettingsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     var settings = [Setting]()
     
     private func loadSampleSettings() {
@@ -30,6 +32,18 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func unwindToMySettings(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddSettingController, let thisSetting = sourceViewController.setting {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: settings.count, section: 0)
+            
+            settings.append(thisSetting)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count

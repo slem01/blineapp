@@ -11,7 +11,6 @@ import UIKit
 
 class AddResponseController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let sections = ["Apps"]
     let apps = ["Maps", "Health", "Contacts"]
     
     weak var delegate: DataEnteredDelegate? = nil
@@ -26,49 +25,21 @@ class AddResponseController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            //apps Section
-            return apps.count
-        default:
-            return 0
-        }
+        return apps.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
-        switch indexPath.section {
-        case 0:
-            cell.textLabel?.text = apps[indexPath.row]
-            break
-        default:
-            break
-        }
-        //cell.textLabel?.text = apps[indexPath.row]
+        cell.textLabel?.text = apps[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = indexPath.section
         let row = indexPath.row
         var response = ""
         
-        switch section {
-        case 0:
-            response = apps[row]
-        default:
-            response = ""
-        }
-        
+        response = apps[row]
         delegate?.userDidEnterResponse(info: response)
         _ = self.navigationController?.popViewController(animated: true)
         
