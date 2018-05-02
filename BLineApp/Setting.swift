@@ -17,6 +17,7 @@ class Setting: NSObject, NSCoding
     var title: String
     //var extraInfo: [String: String]
     
+    
     //MARK: Acheiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("settings")

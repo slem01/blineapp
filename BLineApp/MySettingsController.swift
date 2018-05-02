@@ -25,11 +25,16 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleSettings()
+        //loadSampleSettings()
         
-        // Use the edit button item provided by the table view controller.
-        //navigationItem.leftBarButtonItem = editButtonItem
-        
+        // Load any saved meals, otherwise load sample data.
+        if let savedSettings = loadSettings() {
+            settings += savedSettings
+        } else {
+            // Load the sample data.
+            loadSampleSettings()
+        }
+                
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +58,9 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
                 print("new")
             }
+            
+            // Save the settings.
+            saveSettings()
             
             // Add a new meal.
             //let newIndexPath = IndexPath(row: settings.count, section: 0)
@@ -112,6 +120,7 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+        saveSettings()
     }
     
     // Override to support conditional editing of the table view.
@@ -120,13 +129,17 @@ class MySettingsController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
-    /*private func saveSettings() {
+    private func saveSettings() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(settings, toFile: Setting.ArchiveURL.path)
         if isSuccessfulSave {
             os_log("Settings successfully saved.", log: OSLog.default, type: .debug)
         } else {
             os_log("Failed to save settings...", log: OSLog.default, type: .error)
         }
-    }*/
+    }
+    
+    private func loadSettings() -> [Setting]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Setting.ArchiveURL.path) as? [Setting]
+    }
     
 }
