@@ -12,6 +12,17 @@ import AVFoundation
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var settings = [Setting]()
+    var dict = [String: Setting]()
+    
+    private func loadSampleSettings() {
+        let setting1 = Setting(myAction: "Single Tap", myResponse: "Send Text", title: "Text Shelby")
+        
+        let setting2 = Setting(myAction: "Double Tap", myResponse: "Flash Light", title: "Turn On Flash Light")
+        
+        self.settings += [setting1, setting2]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +60,64 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.view.addGestureRecognizer(swipeUpRecognizer)
         self.view.addGestureRecognizer(swipeRightRecognizer)
         self.view.addGestureRecognizer(swipeDownRecognizer)
+        
+        if let savedSettings = loadSettings() {
+            settings += savedSettings
+        } else {
+            // Load the sample data.
+            loadSampleSettings()
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        settings = []
+        if let savedSettings = loadSettings() {
+            settings += savedSettings
+        } else {
+            // Load the sample data.
+            loadSampleSettings()
+        }
+        dict = [:]
+        for s in settings{
+            dict[s.myAction] = s
+        }
+    }
+    
+    func callMyFunction(response: Setting){
+        switch response.myResponse {
+            case "Make Call":
+                openMyURL(myURL: "telprompt://"+response.extraInfo1)
+            case "Send Text":
+                sendSMSText(phoneNumber: "7347783566")
+            case "Open Safari":
+                openMyURL(myURL: "http://www.google.com")
+            case "Instagram":
+                openMyURL(myURL: "instagram://")
+            case "Music":
+                openMyURL(myURL: "music://")
+            case "Facetime":
+                openMyURL(myURL: "facetime-prompt://7347783566")
+            case "Map":
+                openMyURL(myURL: "maps://")
+            case "Facebook":
+                openMyURL(myURL: "fb://")
+            case "Facebook Message":
+                openMyURL(myURL: "fb-messenger://")
+            case "Snapchat":
+                openMyURL(myURL: "snapchat://")
+            case "Spotify":
+                openMyURL(myURL: "spotify://")
+            case "Waze":
+                openMyURL(myURL: "waze://")
+            case "Youtube":
+                openMyURL(myURL: "youtube://")
+            case "Pinterest":
+                openMyURL(myURL: "pinterest://")
+            case "Flash Light":
+                toggleFlashlight()
+            default:
+                break
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,31 +135,52 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //openMyURL(myURL: "telprompt://7347783566")
         //openMyURL(myURL: "instagram://")
 
+        if let val = dict["Single Tap"] {
+            callMyFunction(response: val)
+        }
         print("single tap")
         
     }
     
     func doubleTapped(_ sender: UITapGestureRecognizer) {
+        if let val = dict["Double Tap"] {
+            callMyFunction(response: val)
+        }
         print("double tap")
     }
     
     func twoTapped(_ sender: UITapGestureRecognizer) {
+        if let val = dict["Two Finger Tap"] {
+            callMyFunction(response: val)
+        }
         print("two tap")
     }
     
     func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if let val = dict["Swipe Left"] {
+            callMyFunction(response: val)
+        }
         print("swipe left")
     }
 
     func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        if let val = dict["Swipe Up"] {
+            callMyFunction(response: val)
+        }
         print("swipe up")
     }
     
     func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        if let val = dict["Swipe Right"] {
+            callMyFunction(response: val)
+        }
         print("swipe right")
     }
     
     func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        if let val = dict["Swipe Down"] {
+            callMyFunction(response: val)
+        }
         print("swipe down")
     }
     
@@ -140,6 +230,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 
     }
 
+    private func loadSettings() -> [Setting]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Setting.ArchiveURL.path) as? [Setting]
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
