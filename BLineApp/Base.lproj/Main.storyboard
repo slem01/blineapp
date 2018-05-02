@@ -70,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" rowHeight="90" id="Km9-YE-6bc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" rowHeight="90" id="Km9-YE-6bc" customClass="settingCell" customModule="BLineApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Km9-YE-6bc" id="AGS-0u-FAh">
@@ -99,7 +99,7 @@
                     <navigationItem key="navigationItem" title="My Settings" id="O00-Dj-QuT">
                         <barButtonItem key="rightBarButtonItem" title="+" id="51e-I4-TRS">
                             <connections>
-                                <segue destination="teE-Yo-5T9" kind="show" id="hms-v8-AZH"/>
+                                <segue destination="teE-Yo-5T9" kind="show" identifier="AddSegue" id="hms-v8-AZH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -22,10 +22,22 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
     var response: String = ""
     var t: String = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveButton.isEnabled = false
-        //saveButton.userInteractionEnabled = false
+        
+        if let setting = setting {
+            action = setting.myAction
+            response = setting.myResponse
+            t = setting.title
+            addActionButton.setTitle(setting.myAction, for: .normal)
+            addResponseButton.setTitle(setting.myResponse, for: .normal)
+            
+        }
+        if action == "" && response == "" {
+            saveButton.isEnabled = false
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,7 +60,9 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-        t = "Test Title"
+        if t == "" {
+            t = "Test Title"
+        }
         setting = Setting(myAction: action, myResponse: response, title: t)
         
     }
@@ -74,6 +88,15 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
     }
     
     @IBAction func cancel(_ sender: Any) {
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddSettingMode = presentingViewController is UINavigationController
+        if isPresentingInAddSettingMode {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
         dismiss(animated: true, completion: nil)
     }
     
