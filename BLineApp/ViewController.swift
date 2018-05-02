@@ -86,7 +86,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     func callMyFunction(response: Setting){
         switch response.myResponse {
             case "Make Call":
-                openMyURL(myURL: "telprompt://"+response.extraInfo1)
+                openMyURL(myURL: "telprompt://7347783566")
             case "Send Text":
                 sendSMSText(phoneNumber: "7347783566")
             case "Open Safari":
