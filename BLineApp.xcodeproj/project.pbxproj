@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		811013A9207C23660056F108 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811013A8207C23660056F108 /* Setting.swift */; };
 		811013AB207C28250056F108 /* settingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811013AA207C28250056F108 /* settingConstants.swift */; };
+		D55162F820997C1500B3C4B4 /* settingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55162F720997C1500B3C4B4 /* settingCell.swift */; };
 		D5520F2E207B1AB3002A4D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */; };
 		D5520F30207B1AB3002A4D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5520F2F207B1AB3002A4D3D /* ViewController.swift */; };
 		D5520F33207B1AB3002A4D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5520F31207B1AB3002A4D3D /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		811013A8207C23660056F108 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		811013AA207C28250056F108 /* settingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingConstants.swift; sourceTree = "<group>"; };
+		D55162F720997C1500B3C4B4 /* settingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingCell.swift; sourceTree = "<group>"; };
 		D5520F2A207B1AB3002A4D3D /* BLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5520F2F207B1AB3002A4D3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				D5520F2D207B1AB3002A4D3D /* AppDelegate.swift */,
 				D5520F31207B1AB3002A4D3D /* Main.storyboard */,
 				D5520F2F207B1AB3002A4D3D /* ViewController.swift */,
+				D55162F720997C1500B3C4B4 /* settingCell.swift */,
 				D5E41368207B365A00CF551D /* MySettingsController.swift */,
 				811013A8207C23660056F108 /* Setting.swift */,
 				D5EE25952097B0D600EFE55A /* AddSettingController.swift */,
@@ -247,6 +250,7 @@
 				811013AB207C28250056F108 /* settingConstants.swift in Sources */,
 				811013A9207C23660056F108 /* Setting.swift in Sources */,
 				D5EE25942093ADEC00EFE55A /* AddResponseController.swift in Sources */,
+				D55162F820997C1500B3C4B4 /* settingCell.swift in Sources */,
 				D5520F2E207B1AB3002A4D3D /* AppDelegate.swift in Sources */,
 				D5EE259220927D3B00EFE55A /* AddActionController.swift in Sources */,
 			);

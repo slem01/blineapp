@@ -17,16 +17,17 @@ class Setting: NSObject, NSCoding
     var title: String
     //var extraInfo: [String: String]
     
+    //MARK: Acheiving Paths
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("settings")
+
+    
     //MARK: Types
     struct PropertyKey {
         static let myAction = "action"
         static let myResponse = "response"
         static let title = "title"
     }
-    
-    //MARK: Acheiving Paths
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("settings")
     
     //MARK: Initialization
     init(myAction: String, myResponse: String, title: String) {
@@ -37,9 +38,9 @@ class Setting: NSObject, NSCoding
         }*/
         //super.init()
         
-        self.myAction = ""
-        self.myResponse = ""
-        self.title = ""
+        self.myAction = myAction
+        self.myResponse = myResponse
+        self.title = title
         //self.extraInfo = [:]
     }
     

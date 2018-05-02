@@ -28,12 +28,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcu-WI-lAz">
                                 <rect key="frame" x="16" y="602" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="?"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="❓"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enk-c9-4By">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enk-c9-4By">
                                 <rect key="frame" x="314" y="602" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="?"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="⚙"/>
                                 <connections>
                                     <segue destination="115-Zl-yMZ" kind="show" id="s9V-WX-GcZ"/>
                                 </connections>
@@ -64,17 +66,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="90" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pBX-Bb-Ti7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pBX-Bb-Ti7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" rowHeight="90" id="Km9-YE-6bc">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" rowHeight="90" id="Km9-YE-6bc" customClass="settingCell" customModule="BLineApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Km9-YE-6bc" id="AGS-0u-FAh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7bd-oB-l6i" kind="show" identifier="ShowDetail" id="AyC-ts-exd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -94,10 +99,13 @@
                     <navigationItem key="navigationItem" title="My Settings" id="O00-Dj-QuT">
                         <barButtonItem key="rightBarButtonItem" title="+" id="51e-I4-TRS">
                             <connections>
-                                <segue destination="teE-Yo-5T9" kind="show" id="hms-v8-AZH"/>
+                                <segue destination="teE-Yo-5T9" kind="show" identifier="AddSegue" id="hms-v8-AZH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="pBX-Bb-Ti7" id="CAH-DW-M0M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnm-5S-Wcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,16 +165,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="b16-HB-HIs">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3Gb-MV-MJl"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="UL2-5Y-v3i"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3Gb-MV-MJl">
+                            <connections>
+                                <action selector="cancel:" destination="7bd-oB-l6i" id="ATq-Hd-yu6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UL2-5Y-v3i">
+                            <connections>
+                                <segue destination="LCg-Qe-Ir7" kind="unwind" identifier="unwindSegue" unwindAction="unwindToMySettingsWithSender:" id="qit-N5-m4O"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <connections>
                         <outlet property="addActionButton" destination="i0P-pn-1C8" id="9Th-cJ-wzS"/>
                         <outlet property="addResponseButton" destination="iIV-bg-vkw" id="pcM-HE-SDj"/>
+                        <outlet property="saveButton" destination="UL2-5Y-v3i" id="DBH-10-Rlk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmU-uK-x2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LCg-Qe-Ir7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4132" y="-401.64917541229386"/>
         </scene>
@@ -182,12 +200,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ON9-kq-eio">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ON9-kq-eio">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlainCell" id="gGz-7C-G6C">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gGz-7C-G6C" id="Uao-7n-zWX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -292,10 +310,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="go7-Os-fyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3192.8000000000002" y="-401.64917541229386"/>
+            <point key="canvasLocation" x="3191" y="268"/>
         </scene>
     </scenes>
     <resources>
         <image name="blinebackground.png" width="291" height="515"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="AyC-ts-exd"/>
+    </inferredMetricsTieBreakers>
 </document>
