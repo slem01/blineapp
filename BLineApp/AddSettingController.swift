@@ -16,6 +16,7 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
     @IBOutlet weak var addActionButton: UIButton!
     @IBOutlet weak var addResponseButton: UIButton!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var titleField: UITextField!
 
     var setting: Setting?
     var action: String = ""
@@ -60,8 +61,10 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-        if t == "" {
+        if titleField.text == "" {
             t = "Test Title"
+        } else {
+            t = titleField.text!
         }
         setting = Setting(myAction: action, myResponse: response, title: t)
         
@@ -86,6 +89,7 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
             saveButton.isEnabled = true
         }
     }
+
     
     @IBAction func cancel(_ sender: Any) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.

@@ -123,12 +123,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0P-pn-1C8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="301"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0P-pn-1C8">
+                                <rect key="frame" x="0.0" y="91" width="375" height="288"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="301" id="zge-wC-Da8"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Add Action">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,8 +134,14 @@
                                     <segue destination="ACh-fY-QGv" kind="show" identifier="addActionSegue" id="q0J-gG-EL4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-bg-vkw">
-                                <rect key="frame" x="0.0" y="365" width="375" height="302"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZQ-fc-d7V">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-bg-vkw">
+                                <rect key="frame" x="0.0" y="379" width="375" height="288"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="302" id="anh-jy-9jW"/>
@@ -154,14 +157,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="i0P-pn-1C8" secondAttribute="trailing" id="NXQ-oK-BOA"/>
-                            <constraint firstItem="i0P-pn-1C8" firstAttribute="top" secondItem="Fde-14-Rll" secondAttribute="top" constant="64" id="P0r-Qi-jge"/>
-                            <constraint firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="Tzc-Kg-swF"/>
-                            <constraint firstItem="i0P-pn-1C8" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="ZcX-Ad-O5c"/>
-                            <constraint firstItem="iIV-bg-vkw" firstAttribute="top" secondItem="Fde-14-Rll" secondAttribute="top" constant="365" id="aUS-8c-OLq"/>
-                            <constraint firstItem="iIV-bg-vkw" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="bTo-Vg-ia3"/>
-                            <constraint firstAttribute="bottom" secondItem="i0P-pn-1C8" secondAttribute="bottom" constant="302" id="eTC-dk-iNB"/>
-                            <constraint firstAttribute="bottom" secondItem="iIV-bg-vkw" secondAttribute="bottom" id="iQN-lZ-UWY"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="top" secondItem="U3b-5l-bth" secondAttribute="bottom" constant="27" id="1fd-qn-TS5"/>
+                            <constraint firstItem="i0P-pn-1C8" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="4q0-AB-KqT"/>
+                            <constraint firstAttribute="trailing" secondItem="QZQ-fc-d7V" secondAttribute="trailing" id="8hP-ca-zeF"/>
+                            <constraint firstAttribute="trailing" secondItem="i0P-pn-1C8" secondAttribute="trailing" id="FOM-i8-FCO"/>
+                            <constraint firstAttribute="trailing" secondItem="iIV-bg-vkw" secondAttribute="trailing" id="KmN-ZV-GMr"/>
+                            <constraint firstItem="iIV-bg-vkw" firstAttribute="top" secondItem="i0P-pn-1C8" secondAttribute="bottom" id="MyW-HY-JC4"/>
+                            <constraint firstItem="QZQ-fc-d7V" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="Tre-9H-1qM"/>
+                            <constraint firstItem="iIV-bg-vkw" firstAttribute="leading" secondItem="Fde-14-Rll" secondAttribute="leading" id="jgr-Vd-i6t"/>
+                            <constraint firstItem="gPU-pn-YnM" firstAttribute="top" secondItem="iIV-bg-vkw" secondAttribute="bottom" id="qCK-BQ-Qch"/>
+                            <constraint firstItem="QZQ-fc-d7V" firstAttribute="top" secondItem="U3b-5l-bth" secondAttribute="bottom" id="r2U-mO-gji"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="b16-HB-HIs">
@@ -181,6 +186,7 @@
                         <outlet property="addActionButton" destination="i0P-pn-1C8" id="9Th-cJ-wzS"/>
                         <outlet property="addResponseButton" destination="iIV-bg-vkw" id="pcM-HE-SDj"/>
                         <outlet property="saveButton" destination="UL2-5Y-v3i" id="DBH-10-Rlk"/>
+                        <outlet property="titleField" destination="QZQ-fc-d7V" id="Qbe-jl-V6m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmU-uK-x2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
