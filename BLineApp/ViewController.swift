@@ -89,31 +89,31 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 openMyURL(myURL: "telprompt://7347783566")
             case "Send Text":
                 sendSMSText(phoneNumber: "7347783566")
-            case "Open Safari":
+            case "Open Website in Safari":
                 openMyURL(myURL: "http://www.google.com")
-            case "Instagram":
+            case "Open Instagram":
                 openMyURL(myURL: "instagram://")
-            case "Music":
+            case "Open Apple Music":
                 openMyURL(myURL: "music://")
-            case "Facetime":
+            case "Call on Facetime":
                 openMyURL(myURL: "facetime-prompt://7347783566")
-            case "Map":
+            case "Open Maps":
                 openMyURL(myURL: "maps://")
-            case "Facebook":
+            case "Open Facebook":
                 openMyURL(myURL: "fb://")
-            case "Facebook Message":
+            case "Open Facebook Message":
                 openMyURL(myURL: "fb-messenger://")
-            case "Snapchat":
+            case "Open Snapchat":
                 openMyURL(myURL: "snapchat://")
-            case "Spotify":
+            case "Open Spotify":
                 openMyURL(myURL: "spotify://")
-            case "Waze":
+            case "Open Waze":
                 openMyURL(myURL: "waze://")
-            case "Youtube":
+            case "Open Youtube":
                 openMyURL(myURL: "youtube://")
-            case "Pinterest":
+            case "Open Pinterest":
                 openMyURL(myURL: "pinterest://")
-            case "Flash Light":
+            case "Toggle Flash Light":
                 toggleFlashlight()
             default:
                 break
