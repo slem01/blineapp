@@ -5,6 +5,7 @@
 //  Created by sally everlove on 4/26/18.
 //  Copyright © 2018 Shelby Lem. All rights reserved.
 //
+// 734 778 3566
 
 import UIKit
 
@@ -16,7 +17,7 @@ protocol DataEnteredDelegate: class {
 class AddActionController: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     let sections = ["Tap", "Swipe"]
-    let tap = ["Single Tap", "Double Tap"]
+    let tap = ["Single Tap", "Double Tap", "Two Finger Tap"]
     let swipe = ["Swipe Left", "Swipe Up", "Swipe Right", "Swipe Down"]
     
     weak var delegate: DataEnteredDelegate? = nil

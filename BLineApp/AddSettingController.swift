@@ -33,6 +33,7 @@ class AddSettingController: UIViewController, DataEnteredDelegate {
             t = setting.title
             addActionButton.setTitle(setting.myAction, for: .normal)
             addResponseButton.setTitle(setting.myResponse, for: .normal)
+            titleField.text = t
             
         }
         if action == "" && response == "" {
